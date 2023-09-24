@@ -7,6 +7,9 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import axios from "axios";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 const tools = [
   {
@@ -43,6 +46,21 @@ const tools = [
 
 export default function ProModal() {
   const proModal = useProModal();
+  const [loading, setLoading] = useState(false);
+
+  async function onSubscribe() {
+    try {
+      setLoading(true);
+      const response = await axios.get("/api/stripe");
+
+      window.location.href = response.data.url;
+    } catch (error) {
+      toast.error("Something went wrong. Please wait and try again.");
+      console.log("STRIPE_CLIENT_ERROR", error);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <Dialog open={proModal.isOpen} onOpenChange={proModal.onClose}>
@@ -74,6 +92,8 @@ export default function ProModal() {
         </DialogHeader>
         <DialogFooter>
           <Button
+            disabled={loading}
+            onClick={onSubscribe}
             size="lg"
             variant="premium"
             className="w-full"
