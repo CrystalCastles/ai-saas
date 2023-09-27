@@ -9,10 +9,10 @@ export default function LandingHero() {
   const { isSignedIn } = useAuth();
 
   return (
-    <div className="text-white font-bold py-36 text-center space-y-5">
+    <div className="text-white font-bold space-y-5 h-full flex flex-col items-center justify-center">
       <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7x1 space-y-5 font-extrabold">
         <h1>The Best AI Tool for</h1>
-        <div className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+        <div className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-700">
           <TypewriterComponent
             options={{
               strings: [
