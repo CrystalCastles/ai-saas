@@ -1,15 +1,15 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Oxygen } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs'
 import ModalProvider from '@/components/modal-provider'
 import ToasterProvider from '@/components/toaster-provider'
 import CrispProvider from '@/components/crisp-provider'
 
-const inter = Inter({ subsets: ['latin'] })
+const oxygen = Oxygen({ weight: '400', subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'AI Saas',
+  title: 'rectifAI',
   description: 'AI Platform',
 }
 
@@ -22,7 +22,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <CrispProvider />
-        <body className={inter.className}>
+        <body className={oxygen.className}>
           <ModalProvider />
           <ToasterProvider />
           {children}

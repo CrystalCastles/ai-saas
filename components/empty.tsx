@@ -9,14 +9,16 @@ export default function Empty({
 }: EmptyProps) {
   return (
     <div className="h-full p-20 flex flex-col items-center justify-center">
-      <div className="relative h-72 w-72">
+      <div className="relative">
         <Image 
           alt="Empty"
-          fill
+          width={400}
+          height={400}
+          quality={100}
           src="/empty.png"
         />
       </div>
-      <p className="text-muted-foreground text-sm text-center">
+      <p className="pt-5 text-muted-foreground text-md text-center">
         {label}
       </p>
     </div>

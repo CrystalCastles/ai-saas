@@ -28,7 +28,7 @@ export default function LandingHero() {
           />
         </div>
       </div>
-      <div className="text-sm md:text-xl font-light text-zinc-400">
+      <div className="text-sm md:text-xl font-light text-zinc-300">
         Create content using AI 10x faster.
       </div>
       <div>
@@ -38,7 +38,7 @@ export default function LandingHero() {
           </Button>
         </Link>
       </div>
-      <div className="text-zinc-400 text-xs md:text-sm font-normal">
+      <div className="text-zinc-300 text-xs md:text-sm font-normal">
         No credit card required.
       </div>
     </div>
